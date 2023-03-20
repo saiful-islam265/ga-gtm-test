@@ -2,9 +2,154 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Google Analytics</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Cheat Sheet</title>
+    <style>
+        .cheat-sheet {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            padding-top: 2.1875em;
+            padding-bottom: 2.1875em;
+            padding-inline: 2em;
+            max-width: 800px;
+            margin-inline: auto;
+            margin-bottom: 2.1875rem;
+            background-color: rgba(112, 189, 255, 0.1);
+        }
+        @media (max-width: 47.99rem) {
+            .cheat-sheet {
+                padding-inline: 1em;
+                width: calc(100% - 2rem);
+            }
+        }
+        .cheat-sheet__title {
+            margin-bottom: 1.875rem;
+        }
+        @media (max-width: 47.99rem) {
+            .cheat-sheet__title {
+                font-size: 1.5625rem;
+            }
+        }
+        .cheat-sheet__button {
+            background-color: #1091ff;
+            border: 1px solid #1091ff;
+            color: #fff;
+            border-radius: 5px;
+            padding: 1em 2em;
+            -webkit-transition: background-color 0.4s;
+            transition: background-color 0.4s;
+        }
+        .cheat-sheet__button:hover {
+            background-color: transparent;
+            color: #000;
+        }
+        .cheat-sheet-form {
+            font-size: 1rem;
+        }
+        .cheat-sheet-form__text {
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+        .cheat-sheet-form__label {
+            display: block;
+            margin-bottom: 1.875rem;
+        }
+        .cheat-sheet-form__input {
+            width: 100%;
+            border: 1px solid #39424a;
+            padding: 1.125em 0.875em;
+        }
+        .cheat-sheet-form__select {
+            width: 100%;
+            border: 1px solid #39424a;
+            padding: 1.125em 0.875em;
+        }
+        .cheat-sheet-form__error {
+            color: #f55;
+            display: block;
+            margin-top: 0.75rem;
+        }
+        .cheat-sheet-download {
+            display: none;
+        }
+        .cheat-sheet-download__msg {
+            font-size: 1.125rem;
+            line-height: 1.875rem;
+            display: none;
+        }
+        .cheat-sheet-download__msg span {
+            font-weight: 600;
+        }
+        .cheat-sheet-download__link {
+            display: none;
+            padding: 0.875em 1.75em;
+            margin-top: 1.25rem;
+            text-decoration: none;
+        }
+        .cheat-sheet-download__link--home {
+            color: #1091ff;
+            background-color: transparent;
+            border: 1px solid #1091ff;
+        }
+    </style>
 </head>
 <body>
+<div class="cheat-sheet">
+    <h1 class="cheat-sheet__title">Download Cheat Sheet</h1>
+    <form class="cheat-sheet-form" method="POST">
+        <label class="cheat-sheet-form__label">
+            <span class="cheat-sheet-form__text">Name</span>
+            <input required type="text" class="cheat-sheet-form__input" name="name" placeholder="Enter Name">
+        </label>
+        <label class="cheat-sheet-form__label">
+            <span class="cheat-sheet-form__text">Email</span>
+            <input required type="email" class="cheat-sheet-form__input" name="email" placeholder="Enter Email">
+        </label>
+        <label class="cheat-sheet-form__label">
+            <span class="cheat-sheet-form__text">Job Title</span>
+            <input required type="text" class="cheat-sheet-form__input" name="job-title" placeholder="Job Title">
+        </label>
+        <label class="cheat-sheet-form__label">
+            <span class="cheat-sheet-form__text">What kind of cheat-sheet do you want to download?</span>
+            <select required class="cheat-sheet-form__select" name="cheat-sheet-type">
+                <option value="" selected disabled>Select Cheat Sheet</option>
+                <option value="Linux Cheat Sheet">Linux Cheat Sheet</option>
+                <option value="Django Sheat Sheet">Django Cheat Sheet</option>
+                <option value="Regx Cheat Sheet">Regx cheat-sheet</option>
+                <option value="Python Cheat Sheet">Python Cheat Sheet</option>
+                <option value="Javascript Cheat Sheet">Javascript Cheat Sheet</option>
+                <option value="Git Cheat Sheet">Git Cheat Sheet</option>
+            </select>
+        </label>
+        <button type="submit" class="button cheat-sheet-form__submit cheat-sheet__button">Create Download Link</button>
+    </form>
+    <div class="cheat-sheet-download">
+        <p class="cheat-sheet-download__msg">Thanks for your interest! Download your <span></span> below.</p>
+        <a target="_blank" class="button cheat-sheet__button cheat-sheet-download__link cheat-sheet-download__link--linux" data-cheat-sheet="Fashion cheat-sheet" href="https://cheatography.com/davechild/cheat-sheets/linux-command-line/pdf/">Download Linux Cheat Sheet</a>
+        <a target="_blank" class="button cheat-sheet__button cheat-sheet-download__link cheat-sheet-download__link--django" data-cheat-sheet="Technology cheat-sheet" href="https://cheatography.com/ogr/cheat-sheets/django/pdf/">Download Django Cheat Sheet</a>
+        <a target="_blank" class="button cheat-sheet__button cheat-sheet-download__link cheat-sheet-download__link--regx" data-cheat-sheet="Health cheat-sheet" href="https://cheatography.com/davechild/cheat-sheets/regular-expressions/pdf/">Download Regx Cheat Sheet</a>
+        <a target="_blank" class="button cheat-sheet__button cheat-sheet-download__link cheat-sheet-download__link--python" data-cheat-sheet="Business cheat-sheet" href="https://cheatography.com/davechild/cheat-sheets/python/pdf/">Download Python Cheat Sheet</a>
+        <a target="_blank" class="button cheat-sheet__button cheat-sheet-download__link cheat-sheet-download__link--javascript" data-cheat-sheet="Travel cheat-sheet" href="https://cheatography.com/davechild/cheat-sheets/javascript/pdf/">Download Javascript Cheat Sheet</a>
+        <a target="_blank" class="button cheat-sheet__button cheat-sheet-download__link cheat-sheet-download__link--git" data-cheat-sheet="Sports cheat-sheet" href="https://cheatography.com/woshijpf/cheat-sheets/git-command/pdf/">Download Git Cheat Sheet</a>
+    </div>
+</div>
+<script>
+    // Cheat sheet Download
+    document.querySelector('.cheat-sheet-form').addEventListener('submit', function (e) {
+        e.preventDefault()
+        if( e.target.checkValidity() ) {
+            selectedMagazine = document.querySelector('select', this).value;
+            this.reset()
+            this.style.display="none"
+            document.querySelector('.cheat-sheet-download').style.display="block"
+            document.querySelector('.cheat-sheet-download__msg').style.display="block"
+            document.querySelector('.cheat-sheet-download__msg span').textContent =selectedMagazine
+            document.querySelector(`.cheat-sheet-download__link--${selectedMagazine.split(' ')[0].toLowerCase()}`).style.display='inline-block'
+        }
 
+    })
+</script>
 </body>
 </html>
