@@ -135,6 +135,8 @@
         <a target="_blank" class="button cheat-sheet__button cheat-sheet-download__link cheat-sheet-download__link--git" data-cheat-sheet="Sports cheat-sheet" href="https://cheatography.com/woshijpf/cheat-sheets/git-command/pdf/">Download Git Cheat Sheet</a>
     </div>
 </div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160395755-1"></script>
 <script>
     // Cheat sheet Download
     document.querySelector('.cheat-sheet-form').addEventListener('submit', function (e) {
@@ -150,6 +152,11 @@
         }
 
     })
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-160395755-1');
 </script>
 </body>
 </html>
